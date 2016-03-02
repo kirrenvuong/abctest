@@ -1,0 +1,3 @@
+* ***************directive-ng-model-options**********************
+ng-model-options="{debounce:1000}" : ngung 1 s m?i th?c hi?n
+ng-model-options="{updateOn:'blur'}": di chuy?n tr? ra kh?i input m?i th?c hi?n

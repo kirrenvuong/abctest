@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" src="angular.min.js"></script>
+		<script language="javascript">
+            angular.module('myapp', [])
+            .controller('optionsController', ['$scope', function($scope) {
+                var _name = 'Freetuts.net';
+                $scope.user = {
+                    name: function(newName) {
+                            return angular.isDefined(newName) ? (_name = newName) : _name;
+                        }
+                    };
+                }]);
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="optionsController">
+            <form name="userForm">
+                <h5>Nhập nội dung của bạn nào</h5>
+                <input type="text" name="userName" ng-model-options="{ getterSetter: true }" ng-model="user.name"/><br />
+                <h5>Chuỗi mà Bạn đang nhập là:</h5>
+                <span ng-bind="user.name()"></span>
+            </form>
+        </div>
+    </body>
+</html>
